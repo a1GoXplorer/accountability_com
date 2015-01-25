@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'senatorsindex/show'
+
+  get 'senatorsindex/new'
+
+  get 'senatorsindex/edit'
+
   root to: 'sites#index'
 
   resources :users, except: [:new]
