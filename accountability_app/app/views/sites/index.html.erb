@@ -1,0 +1,9 @@
+<h1>Welcome to our awesome Senator Accountability App</h1>
+<p>Find me in app/views/sites/index.html.erb</p>
+
+<% @senators.each do |senator| %>
+
+  <div class='senator container'>
+    <h3 class'senator_name_index'><%= senator.first_name + senator.last_name %></h3><br>
+  </div>
+<% end %>

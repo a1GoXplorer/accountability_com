@@ -1,0 +1,33 @@
+<h1>Sign Up</h1>
+  <h5>PLEASE NOTE: Passwords must be at least eight characters long and must contain lower <strong>AND</strong> upper case letters.</h5>
+
+  <%= form_for @user do |f| %>
+      <br>
+      <div>
+        <%= f.text_field :email, placeholder:"Email" %>
+      </div>
+      <br>
+      <div>
+        <%= f.text_field :email_confirmation, placeholder: "Email Confirmation" %>
+      </div>
+      <br>
+      <div>
+        <%= f.password_field :password, placeholder:"Password" %>
+      </div>
+      <br>
+      <div>
+        <%= f.password_field :password_confirmation, placeholder:"Confirm Password" %>
+      </div>
+      <br>
+      <div>
+        <%= f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+      <br>
+      <div>
+        <%= f.text_field :last_name, placeholder: "Last Name" %>
+      </div>
+      <br>
+      <div>
+        <%= f.submit %>
+      </div>
+  <% end %>
