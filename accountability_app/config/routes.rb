@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'senatorsindex/show'
+  get 'senators/show'
 
-  get 'senatorsindex/new'
+  get 'senators/new'
 
-  get 'senatorsindex/edit'
+  get 'senators/edit'
 
   root to: 'sites#index'
 

@@ -5,3 +5,30 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+response = Typhoeus.get(
+      'https://www.govtrack.us/api/v2/role?current=true')
+    # get a response
+    # parse the data and name it
+    sen_data = JSON.parse(response.body)
+    # run a create method to push to the database
+    sen_data["objects"].each do |senator|
+        Senator.create({
+            first_name: senator["person"]["firstname"], 
+            last_name: senator["person"]["lastname"], 
+            date_of_birth: senator["person"]["birthday"], 
+            gender: senator["person"]["gender_label"],
+            political_party: senator["party"],
+            job_title: senator["description"],
+            state: senator["state"],
+            rank: senator["senator_rank_label"],
+            phone: senator["phone"],
+            start_date: senator["startdate"],
+            end_date: senator["enddate"],
+            website: senator["website"],
+            link_to_gov: senator["person"]["link"],
+            twitter_handle: senator["person"]["twitterid"],
+            youtube_id: senator["person"]["youtubeid"],
+            cspan_id: senator["person"]["cspanid"],
+            pvsid: senator["person"]["pvsid"],
+            osid: senator["person"]["osid"]})
+    end
