@@ -9,6 +9,10 @@
   margin-top: -20px;
 }
 
+.senator_name_index{
+  margin-top: 2em;
+}
+
 #banner_text{
   font-family: 'Lato', sans-serif;
   margin-left: 5em;
@@ -40,6 +44,19 @@ p{
 #about_content{
   // background-color:#F8F8F8;
   height: 50em;
+}
+
+#senator_container{
+ 
+}
+
+.republican, .republican a{
+  color:red;
+}
+
+
+.democrat, .democrat a{
+  color:blue;
 }
 
 
