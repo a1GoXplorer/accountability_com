@@ -1,24 +1,30 @@
-
 <div id= "index_container"> 
-<div id="index_banner" class= "index_bannerClass"> 
-<div id="banner_text"> 
-<br>  
-<h1>Senator Accountablity Project </h1>
-<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id eleifend nisi. Pellentesque semper, urna a vulputate scelerisque, mi purus dapibus nisi, id eleifend urna ex eget ligula. Vivamus ultricies nulla tortor, ac lacinia urna malesuada ut. Nulla tincidunt egestas nisi non pellentesque. Mauris sollicitudin, eros ac auctor porta, ex orci tincidunt erat, vitae tempus enim nunc nec sapien.</p>
-</div>
+  <div id="index_banner" class= "index_bannerClass"> 
+    <div id="banner_text"> 
+      <br>  
+      <h1>Senator Accountablity Project </h1>
+      <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id eleifend nisi. Pellentesque semper, urna a vulputate scelerisque, mi purus dapibus nisi, id eleifend urna ex eget ligula. Vivamus ultricies nulla tortor, ac lacinia urna malesuada ut. Nulla tincidunt egestas nisi non pellentesque. Mauris sollicitudin, eros ac auctor porta, ex orci tincidunt erat, vitae tempus enim nunc nec sapien.</p>
+    </div>
+  </div>
 
-</div>
+  <div id="senate_graph" div align="center">
+    <%= image_tag("senate_seats02.png") %>
+  </div>
 
-<div id="senate_graph" div align="center">
-  <%= image_tag("senate_seats02.png") %>
-</div>
 
-<% @senators.each do |senator| %>
 
   <div class='senator container'>
-    <h4 class'senator_name_index'><%= senator.first_name + " " + senator.last_name %></h4><br>
+    
+      <% @senators.order(:state).each_with_index do | senator, index | %>
+        <% if index == 0 || index == 25 || index == 50 || index == 75  %>
+          <div class="col-md-3">
+        <% end %>
+        <h4 class='senator_name_index <%= senator.political_party.downcase %>'> <%= link_to senator.first_name + " " + senator.last_name, senator_path(senator)%></h4>
+        <h4 class='senator_state_index <%= senator.political_party.downcase %>'><%= senator.state%></h4>
+        <% if index == 24 || index == 49 || index == 74 || index == 99 %>
+          </div>
+        <% end %>
+
+       <% end %>
   </div>
-<% end %>
-
-
 </div>
