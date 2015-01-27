@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'bills/index'
+
   root to: 'sites#index'
 
   resources :users, except: [:new]
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   get 'senators/new'
 
   get 'senators/edit'
+
+  get 'bills', to: 'bills#index'
 
 
 end
