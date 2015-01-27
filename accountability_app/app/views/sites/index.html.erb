@@ -11,20 +11,7 @@
     <%= image_tag("senate_seats02.png") %>
   </div>
 
+<br>
+<br>
 
 
-  <div class='senator container'>
-    
-      <% @senators.order(:state).each_with_index do | senator, index | %>
-        <% if index == 0 || index == 25 || index == 50 || index == 75  %>
-          <div class="col-md-3">
-        <% end %>
-        <h4 class='senator_name_index <%= senator.political_party.downcase %>'> <%= link_to senator.first_name + " " + senator.last_name, senator_path(senator)%></h4>
-        <h4 class='senator_state_index <%= senator.political_party.downcase %>'><%= senator.state%></h4>
-        <% if index == 24 || index == 49 || index == 74 || index == 99 %>
-          </div>
-        <% end %>
-
-       <% end %>
-  </div>
-</div>
