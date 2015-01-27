@@ -32,5 +32,6 @@ response = Typhoeus.get(
             youtube_id: senator["person"]["youtubeid"],
             cspan_id: senator["person"]["cspanid"],
             pvsid: senator["person"]["pvsid"],
-            osid: senator["person"]["osid"]})
+            osid: senator["person"]["osid"],
+            bioguideid: senator["person"]["bioguideid"]})
     end
