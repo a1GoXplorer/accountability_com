@@ -6,12 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 response = Typhoeus.get(
-      'https://www.govtrack.us/api/v2/role?current=true')
+      'https://www.govtrack.us/api/v2/role?current=true&limit=600')
     # get a response
     # parse the data and name it
     sen_data = JSON.parse(response.body)
+    # create a new array of Senators that are ONLY Senators
+    sens = sen_data["objects"].select{ |x| x["title_long"] =~ /[sS]enator/}
     # run a create method to push to the database
-    sen_data["objects"].each do |senator|
+    sens.each do |senator|
         Senator.create({
             first_name: senator["person"]["firstname"], 
             last_name: senator["person"]["lastname"], 

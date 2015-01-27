@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'senators/index'
 
-  get 'senators/show'
+  get 'senators/:id', to: 'senators#show', as: 'senator'
 
   get 'senators/new'
 
