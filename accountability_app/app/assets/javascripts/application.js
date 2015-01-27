@@ -14,3 +14,34 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+$(document).ready(function () {
+  var $billsCon = $("#bills_con")
+
+  @@NYT_bills_url || = ENV["NYT_bills_url"
+
+  $.getJSON(@@NYT_bills_url, function (json) {
+    var billdata = JSON.parse(response.body);
+    var bill = billdata['results'][0]['bills'];
+    console.log(bill);
+    bill.forEach(function (bill){
+    $('#billsCon').append('<li>bill["title]</li>');
+
+  });
+});
+
+
+    //     $.getJSON("@@NYT_bills_url", function (json) {
+
+//     })
+//       .done(function (bill))
+//         bills = JSON.parse(response.body)
+//         billdata = bill["results"][0]["bills"]
+
+//         billdata.forEach(function (bill) {
+//           $billsCon.append(billdata["title"])
+//         })
+
+// })
