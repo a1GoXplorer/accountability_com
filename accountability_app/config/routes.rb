@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'senators/show'
-
-  get 'senators/new'
-
-  get 'senators/edit'
-
   root to: 'sites#index'
 
   resources :users, except: [:new]
@@ -24,6 +18,14 @@ Rails.application.routes.draw do
   get 'sites/contact'
 
   get 'sessions/new'
+
+  get 'senators/index'
+
+  get 'senators/show'
+
+  get 'senators/new'
+
+  get 'senators/edit'
 
 
 end
