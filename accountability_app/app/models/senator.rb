@@ -23,5 +23,9 @@ class Senator < ActiveRecord::Base
     senpics = "http://theunitedstates.io/images/congress/450x550/#{bioguideid}.jpg"
   end
 
+  def showflag
+    senflag = "http://www.50states.com/images/redesign/flags/#{state}-smallflag.png"
+  end
+
 
 end
