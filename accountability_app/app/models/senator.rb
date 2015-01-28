@@ -18,7 +18,10 @@ class Senator < ActiveRecord::Base
       }
     end
   end
-[0]
+
+  def showpics
+    senpics = "http://theunitedstates.io/images/congress/450x550/#{bioguideid}.jpg"
+  end
 
 
 end
