@@ -15,4 +15,11 @@
  *= require bootstrap-3.2.0.min.css
  */
  
+ .senator_vote_container {
+  padding-top: 89px;
+ }
+
+ .senator_bills_container {
+  padding-top: 89px;
+ }
 
