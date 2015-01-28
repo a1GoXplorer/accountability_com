@@ -20,31 +20,41 @@
       <h4 class='senator_info'><a href="https://twitter.com/<%= @senator.twitter_handle %>">Twitter</a></h4>
       <h4 class='senator_info'><a href="https://www.youtube.com/<%= @senator.youtube_id %>">YouTube</a></h4>
       <!-- <h4 class='senator_info'>CSPAN ID: <%= @senator.cspan_id %></h4> -->
+      <% if current_user %>
+        <div>
+        <br>
+      <%= button_to "Add to watchlist","/watchlists", params: {senator_id: @senator.id}, method: "post", class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
   </div>
 
-  <div class="senator_vote_container col-sm-4">
-    <% @votes.each do |vote| %>
-        <h4>Most Recent Vote: <%= vote[:most_recent_vote] %></h4>
-        <h4>Missed Votes Percentage: <%= vote[:missed_votes_pct] %></h4>
-        <h4>Percentage of Votes With Party: <%= vote[:votes_with_party_pct] %></h4>
-    <% end %>
+  <div class="row">
+    <div class="senator_vote_container col-sm-4">
+      <% @votes.each do |vote| %>
+          <h4>Most Recent Vote: <h1><%= vote[:most_recent_vote] %></h1></h4>
+    </div>
+    <div class="senator_vote_container col-sm-4">
+          <h4>Missed Votes Percentage: <h1><%= vote[:missed_votes_pct] %>%</h1></h4>
+    </div>
+    <div class="senator_vote_container col-sm-4">
+          <h4>Percentage of Votes With Party: <h1><%= vote[:votes_with_party_pct] %> %</h1></h4>
+      <% end %>
+    </div>
   </div>
 
-  <div class="senator_bills_container col-sm-4">
-    <% @votes.each do |vote| %>
-      <h4>Number of Bills Sponsored: <%= vote[:bills_sponsored] %></h4>
-      <h4>Number of Bills Co-Sponsored: <%= vote[:bills_cosponsored] %></h4>
-    <% end %>
+  <div class="row">
+    <div class="senator_bills_container col-sm-4">
+      <% @votes.each do |vote| %>
+        <h4>Number of Bills Sponsored: <h1><%= vote[:bills_sponsored] %></h1></h4>
+    </div>
+    <div class="senator_bills_container col-sm-4">
+        <h4>Number of Bills Co-Sponsored: <h1><%= vote[:bills_cosponsored] %></h1></h4>
+      <% end %>
+    </div>
   </div>
+  
+  <br>
+
 
 </div>
-
-  <br>
-  <% if current_user %>
-    <div>
-      <%= button_to "Add to watchlist","/watchlists", params: {senator_id: @senator.id}, method: "post", class: "btn btn-primary" %>
-    </div>
-  <% end %>
-
-

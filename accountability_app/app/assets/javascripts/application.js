@@ -33,15 +33,3 @@ $(document).ready(function () {
 });
 
 
-    //     $.getJSON("@@NYT_bills_url", function (json) {
-
-//     })
-//       .done(function (bill))
-//         bills = JSON.parse(response.body)
-//         billdata = bill["results"][0]["bills"]
-
-//         billdata.forEach(function (bill) {
-//           $billsCon.append(billdata["title"])
-//         })
-
-// })
