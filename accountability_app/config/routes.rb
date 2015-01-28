@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
   get 'bills', to: 'bills#index'
 
+  get 'bills/passed_bills', to: 'bills#passed_bills'
+
 
 end
 
