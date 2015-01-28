@@ -28,3 +28,12 @@
   </div>
 
 </div>
+
+  <br>
+  <% if current_user %>
+    <div>
+      <%= button_to "Add to watchlist","/watchlists", params: {senator_id: @senator.id}, method: "post", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+
