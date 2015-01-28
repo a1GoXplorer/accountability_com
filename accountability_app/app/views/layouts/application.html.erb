@@ -6,8 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
+
+
 <!-- Static navbar -->
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
@@ -23,25 +26,61 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="/sites/about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/senators">Senators</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bills <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/bills">Recently Introduced Bills</a></li>
+            <li><a href="/bills/passed_bills">Recently Passed Bills</a></li>
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% unless current_user %>
           <li><a href="/login">Sign In</a></li>
           <li><a href="/sign_up">Sign Up<span class="sr-only">(current)</span></a></li>
         <% else %>
+          <li><a href="/watchlist">Watchlist</a></li>
           <li><a href="/logout">Logout</a></li>
         <% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+<!-- End of Navigation -->
+
+<%= yield %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+<!-- FOOTER -->
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="about">About Us</a></li>
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
 
-<!-- End of Navigation -->
+<!-- End of FOOTER -->
 
-<!-- <div class="container"> -->
-
-<%= yield %>
 
 
 </body>
