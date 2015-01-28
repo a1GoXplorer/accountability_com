@@ -6,8 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
+
+
 <!-- Static navbar -->
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
@@ -24,8 +27,13 @@
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
         <li><a href="/senators">Senators</a></li>
-        <li><a href="/bills">Recently Introduced Bills</a></li>
-        <li><a href="/bills/passed_bills">Recently Passed Bills</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bills <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/bills">Recently Introduced Bills</a></li>
+            <li><a href="/bills/passed_bills">Recently Passed Bills</a></li>
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% unless current_user %>
@@ -39,7 +47,6 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-
 <!-- End of Navigation -->
 
 <%= yield %>
@@ -73,6 +80,8 @@
 </nav>
 
 <!-- End of FOOTER -->
+
+
 
 </body>
 </html>
