@@ -27,6 +27,9 @@ class Senator < ActiveRecord::Base
     senflag = "http://www.50states.com/images/redesign/flags/#{state}-smallflag.png"
   end
 
+  def showstate
+    senstate = "https://raw.githubusercontent.com/TheJasonHorsley/state-map/master/stateImages/California.png"
+  end
 
 
 
