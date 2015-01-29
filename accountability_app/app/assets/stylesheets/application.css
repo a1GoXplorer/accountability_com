@@ -10,9 +10,28 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+*= require_tree .
  *= require_self
  *= require bootstrap-3.2.0.min.css
  */
+/*
+.row {
+	padding-top: 15em;
+}
+#bottom_footer{
+	background:#BACBD9;
+
+}
  
+#about_us {
+ 	
+ 	margin-top: 10em;
+ 	font-family: 'Lato', sans-serif;
+ 	width:100%;
+ }
+
+ #github_url {
+ 	font-size: 10px;
+ }
+*/
 

@@ -1,3 +1,4 @@
+
 <div id= "index_container"> 
   <div id="index_banner" class= "index_bannerClass"> 
     <div id="banner_text"> 
@@ -10,8 +11,110 @@
   <div id="senate_graph" div align="center">
     <%= image_tag("senate_seats02.png") %>
   </div>
+  
+<div class="container" id= "charts">
+    <div class="container_pie">
+        <canvas id="canvas" height="425" width="600"></canvas>
+      </div>
+      <div class="container_bar">
+        <h3> 2014 Campaign Financing Chart In Millions </h3>
+        <canvas id="campaign_chart" height="450" width="600" ></canvas>
+    </div>
+</div>
 
-<br>
-<br>
+<!-- resposive -->
+  <!--   <div class="canvas" style="top:400";>
+        <canvas id="canvas" height="425" width="600"></canvas>
+      </div>
+      <div class="campaign_chart">
+        <h3 class="noBoot"> 2014 Campaign Financing Chart In Millions </h3>
+        <canvas id="campaign_chart" height="450" width="600" ></canvas>
+    </div>
+</div> -->
+
+
+
+
+
+ <script>
+
+  var ctx = document.getElementById("canvas").getContext("2d");
+  var data = [
+    {   
+        value: 20,
+        color:"#325D90",
+        highlight: "#AAB7BF",
+        label: "women"
+    },
+    
+    {
+        value: 80,
+        color: "#325D90",
+        highlight: "#AAB7BF",
+        label: "men"
+    }
+  ]
+
+    var options = {
+        //Boolean - Whether we should show a stroke on each segment
+      segmentShowStroke : true,
+
+      //String - The colour of each segment stroke
+      segmentStrokeColor : "#fff",
+
+      //Number - The width of each segment stroke
+      segmentStrokeWidth : 2,
+
+      //Number - The percentage of the chart that we cut out of the middle
+      percentageInnerCutout : 50, // This is 0 for Pie charts
+
+      //Number - Amount of animation steps
+      animationSteps : 100,
+
+      //String - Animation easing effect
+      animationEasing : "easeOutBounce",
+
+      //Boolean - Whether we animate the rotation of the Doughnut
+      animateRotate : true,
+
+      //Boolean - Whether we animate scaling the Doughnut from the centre
+      animateScale : false,
+
+    
+   }
+  
+
+  var male_female_chart = new Chart(ctx).Pie(data, options);
+
+
+  </script>
+
+  <script>
+  window.onload = function(){
+    var ctx = document.getElementById("campaign_chart").getContext("2d");
+    window.myBar = new Chart(ctx).Bar(barChartData);
+   }
+
+  var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+  var totalDollar = []; 
+  var barChartData = {
+    labels : ["Edward Markey","Mitch Mcconnell", "Mark Warner","Mark Begich","Lamar Alexander","Thad Cochran","Pat Roberts"],
+    datasets : [
+      {
+
+        fillColor : "rgba(189,203,216,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(170,183,191,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [18,17.5,12.4,8.5,7.3,6.6,6.4]
+      }
+
+  ]
+};
+
+var myBarChart = new Chart(ctx).Bar(data, options);
+  
+
+  </script>
 
 
