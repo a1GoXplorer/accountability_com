@@ -28,4 +28,7 @@ class Senator < ActiveRecord::Base
   end
 
 
+
+
+
 end
