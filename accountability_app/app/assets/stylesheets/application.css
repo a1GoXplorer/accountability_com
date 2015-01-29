@@ -14,24 +14,21 @@
  *= require_self
  *= require bootstrap-3.2.0.min.css
  */
-/*
-.row {
-	padding-top: 15em;
-}
-#bottom_footer{
-	background:#BACBD9;
 
-}
  
-#about_us {
- 	
- 	margin-top: 10em;
+ .footer{
+ 	padding-top:2em;
  	font-family: 'Lato', sans-serif;
- 	width:100%;
+ 	background: #BACBD9;
  }
 
- #github_url {
- 	font-size: 10px;
+ #text-muted {
+ 	size: 1px;
  }
-*/
+
+ #github_links{
+ 	padding-top: 1em;
+
+ }
+
 
