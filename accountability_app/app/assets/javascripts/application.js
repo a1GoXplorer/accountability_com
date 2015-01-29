@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chart.js
+//= require chart.min.js
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.min
+
 
 
 $(document).ready(function () {
